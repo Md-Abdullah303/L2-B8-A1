@@ -14,3 +14,12 @@ const processInput = (value: string | number | boolean): string | number => {
 const formatCoordinate = (item: readonly [number, number, string]): string => {
   return `Location: ${item[2]} (${item[0]}, ${item[1]})`;
 };
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+  const result: T[] = [];
+  arrays.forEach((arr) => {
+    arr.forEach((element) => {
+      result.push(element);
+    });
+  });
+  return result;
+};

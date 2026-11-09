@@ -15,4 +15,13 @@ const processInput = (value) => {
 const formatCoordinate = (item) => {
     return `Location: ${item[2]} (${item[0]}, ${item[1]})`;
 };
+const concatenateArrays = (...arrays) => {
+    const result = [];
+    arrays.forEach((arr) => {
+        arr.forEach((element) => {
+            result.push(element);
+        });
+    });
+    return result;
+};
 export {};
