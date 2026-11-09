@@ -12,4 +12,7 @@ const processInput = (value) => {
         return value === true ? "Active" : "Inactive";
     }
 };
+const formatCoordinate = (item) => {
+    return `Location: ${item[2]} (${item[0]}, ${item[1]})`;
+};
 export {};
