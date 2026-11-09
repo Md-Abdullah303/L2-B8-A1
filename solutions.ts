@@ -38,7 +38,7 @@ const getPopularCourses = (
   );
 };
 
-const pluckValues = <T, K extends keyof T>(items: T[], key: K) => {
+const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
 class Employee {
@@ -65,21 +65,13 @@ class Manager extends Employee {
 }
 
 const validateAgeAsync = async (age: number): Promise<string> => {
-  const myPromise: Promise<string> = new Promise((resolve, rejects) => {
+  return new Promise((resolve, reject) => {
     if (age >= 18) {
       setTimeout(() => {
         resolve("Access Granted");
       }, 1000);
     } else {
-      rejects(new Error("Access Denied: Must be 18 or older"));
+      reject(new Error("Access Denied: Must be 18 or older"));
     }
   });
-
-  try {
-    const res = await myPromise;
-    console.log(res);
-  } catch (err) {
-    console.log(err);
-  }
-  return myPromise;
 };
