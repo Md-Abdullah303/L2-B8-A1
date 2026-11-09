@@ -24,4 +24,7 @@ const concatenateArrays = (...arrays) => {
     });
     return result;
 };
+const getPopularCourses = (courses, minStudents) => {
+    return courses.filter((course) => course.isPublished === true && course.students >= minStudents);
+};
 export {};
