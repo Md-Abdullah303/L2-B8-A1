@@ -27,4 +27,7 @@ const concatenateArrays = (...arrays) => {
 const getPopularCourses = (courses, minStudents) => {
     return courses.filter((course) => course.isPublished === true && course.students >= minStudents);
 };
+const pluckValues = (items, key) => {
+    return items.map((item) => item[key]);
+};
 export {};
