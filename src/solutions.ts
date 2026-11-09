@@ -41,3 +41,25 @@ const getPopularCourses = (
 const pluckValues = <T, K extends keyof T>(items: T[], key: K) => {
   return items.map((item) => item[key]);
 };
+class Employee {
+  constructor(
+    protected name: string,
+    private baseSalary: number,
+  ) {}
+  getDetails() {
+    return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+  }
+}
+
+class Manager extends Employee {
+  constructor(
+    name: string,
+    baseSalary: number,
+    private department: string,
+  ) {
+    super(name, baseSalary);
+  }
+  getRoleInfo() {
+    return `Manager of ${this.department}: ${this.name}`;
+  }
+}
